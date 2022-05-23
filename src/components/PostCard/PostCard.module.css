@@ -1,0 +1,27 @@
+.PostCard {
+  cursor: pointer;
+}
+
+.Heading {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.Subtitle {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.image {
+  opacity: 0.9;
+  transition: all 0.2s ease-in-out;
+}
+
+.image:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}

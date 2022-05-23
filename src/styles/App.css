@@ -1,0 +1,14 @@
+.card:hover .writer {
+  color: #bbac21;
+}
+
+.writer {
+  transition: all 0.2s ease-in-out;
+}
+
+.limitLine {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
