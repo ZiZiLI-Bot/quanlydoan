@@ -9,7 +9,7 @@ import styles from './ActivityCard.module.css';
 export default function ActivityCard({ data }) {
   return (
     <Box w={285} mb={10} sx={{ overflow: 'hidden', borderRadius: 7, cursor: 'pointer' }} className='card'>
-      <SPImage src={data.image} />
+      <SPImage src={data.image} w='200px' />
       <VStack align='flex-start' bgColor='BGColor' px={4} pt={2}>
         <Heading className={styles.heading} h='50px' size={15}>
           {data.title}

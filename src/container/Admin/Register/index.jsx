@@ -29,6 +29,7 @@ export default function Register() {
   const [ngaySinh, setNgaySinh] = useState(new Date());
   const [gioiTinh, setGioiTinh] = useState('Nam');
   const [diachi, setDiachi] = useState('');
+  const [chiDoan, setchiDoan] = useState('');
   const [ngayVaoDoan, setNgayVaoDoan] = useState(new Date());
   const [noiSinhHoatD, setNoiSinhHoatD] = useState('');
   const [username, setUsername] = useState('');
@@ -47,6 +48,7 @@ export default function Register() {
       noiSinhHoat: noiSinhHoatD,
       username: username,
       email: email,
+      chiDoan: chiDoan,
       password: password,
       isAdmin: false,
       SDT: SDT,
@@ -128,6 +130,10 @@ export default function Register() {
                 </FormControl>
               </Box>
             </HStack>
+            <FormControl id='chiDoan' isRequired>
+              <FormLabel>Chi đoàn:</FormLabel>
+              <Input type='text' onChange={(e) => setchiDoan(e.target.value)} />
+            </FormControl>
             <FormControl id='SDT' isRequired>
               <FormLabel>SDT:</FormLabel>
               <Input type='text' onChange={(e) => setSDT(e.target.value)} />

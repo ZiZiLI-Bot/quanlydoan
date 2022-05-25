@@ -41,6 +41,7 @@ export default function QuanLyDoanVien() {
                 <Th>Ngày sinh</Th>
                 <Th>Giới tính</Th>
                 <Th>Địa chỉ</Th>
+                <Th>Chi đoàn</Th>
                 <Th>Nơi sinh hoạt</Th>
                 <Th>Hành động</Th>
               </Tr>
@@ -53,6 +54,7 @@ export default function QuanLyDoanVien() {
                   <Td>{moment(user.ngaySinh).format('DD-MM-YYYY')}</Td>
                   <Td>{user.gioiTinh}</Td>
                   <Td>{user.diaChi}</Td>
+                  <Td>{user.chiDoan}</Td>
                   <Td>{user.noiSinhHoat}</Td>
                   <Td display='flex' alignItems='center'>
                     <Button colorScheme='blue' fontWeight='light' onClick={() => handleDeleteUser(user.id)}>

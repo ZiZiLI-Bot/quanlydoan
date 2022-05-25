@@ -29,6 +29,7 @@ export default function UserInfo() {
   const [name, setName] = useState(user.fullName);
   const [email, setEmail] = useState(user.email);
   const [gioiTinh, setGioiTinh] = useState(user.gioiTinh);
+  const [chiDoan, setChiDoan] = useState(user.chiDoan);
   const [ngaySinh, setNgaySinh] = useState(new Date());
   const [diachi, setDiachi] = useState(user.diaChi);
   const [ngayVaoDoan, setNgayVaoDoan] = useState(new Date());
@@ -114,6 +115,12 @@ export default function UserInfo() {
               <FormControl id='Địa chỉ' isRequired>
                 <FormLabel>Địa chỉ:</FormLabel>
                 <Input type='text' defaultValue={user?.diaChi} onChange={(e) => setDiachi(e.target.value)} />
+              </FormControl>
+            </Box>
+            <Box>
+              <FormControl id='Địa chỉ' isRequired>
+                <FormLabel>Chi đoàn:</FormLabel>
+                <Input type='text' defaultValue={user?.chiDoan} onChange={(e) => setChiDoan(e.target.value)} />
               </FormControl>
             </Box>
             <Box>
