@@ -34,6 +34,10 @@ const PostAPI = {
     const url = `/api/events/${id}`;
     return axiosClient.get(url, { params: { populate: '*' } });
   },
+  subscribeEvents: async (id, data) => {
+    const url = `/api/events/${id}`;
+    return axiosClient.put(url, data);
+  },
 };
 
 export default PostAPI;

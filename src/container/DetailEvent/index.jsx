@@ -26,8 +26,6 @@ import moment from 'moment';
 import ReactMarkdown from 'react-markdown';
 import CardInlinePost from '../../components/CardInlinePost';
 import ROUTER from '../../router';
-import 'moment/locale/vi';
-moment.locale('vi');
 
 export default function DetailPost() {
   const toast = useToast();
@@ -36,13 +34,14 @@ export default function DetailPost() {
   const { id } = useParams();
   const [data, setData] = useState();
   const [allPosts, setAllPosts] = useState();
-  const [thamGia, setThamGia] = useState(12);
+  const [thamGia, setThamGia] = useState(0);
   const [allEvents, setAllEvents] = useState();
   useEffect(() => {
     const fetchData = async () => {
       const res = await PostAPI.getEventById(id);
       const res1 = await PostAPI.getAllPosts(4);
       const res2 = await PostAPI.getAllEvents(4);
+      setThamGia(res.data?.attributes.subscribe);
       setData(res.data.attributes);
       setAllEvents(res2.data);
       setAllPosts(res1.data);
@@ -50,7 +49,7 @@ export default function DetailPost() {
     fetchData();
   }, [id]);
 
-  const handleToast = () => {
+  const handleToast = async () => {
     toast({
       position: 'top-right',
       title: 'Đăng ký ghi danh thành công',
@@ -59,7 +58,14 @@ export default function DetailPost() {
       duration: 3000,
       isClosable: true,
     });
+    const body = {
+      data: {
+        subscribe: thamGia + 1,
+      },
+    };
     setThamGia(thamGia + 1);
+    const res = await PostAPI.subscribeEvents(id, body);
+    console.log(res);
     onClose();
   };
 
